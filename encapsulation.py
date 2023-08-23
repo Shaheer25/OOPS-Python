@@ -1,28 +1,32 @@
 class BankAccount:
-    def __init__(self, account_number, balance):
-        self._account_number = account_number  # Protected attribute
-        self._balance = balance  # Protected attribute
 
-    def deposit(self, amount):
+    def __init__(self,balance,accountNumber):
+        self.balance=balance
+        self.accountNumber=accountNumber
+
+    def deposite(self,amount):
         if amount > 0:
-            self._balance += amount
+            self.balance+=amount
 
-    def withdraw(self, amount):
-        if 0 < amount <= self._balance:
-            self._balance -= amount
-        else:
-            print("Insufficient balance")
+    def withdraw(self,ammount):
+        if 0<ammount<=self.balance:
+            self.balance -=ammount
+        else :
+            print("Insufficient Balance")
 
-    def get_balance(self):
-        return self._balance
+    def getbalance(self):
+        return self.balance
+
+account=BankAccount(1000,"123456")
+
+print("balance",account.balance)
+
+account.deposite(500)
+
+print("Balance after Depo",account.getbalance())
+
+account.withdraw(900)
+
+print("Balance after Withdraw",account.getbalance())
 
 
-# Creating an instance of the BankAccount class
-account = BankAccount("123456", 1000)
-
-# Accessing attributes through methods (encapsulation)
-print("Initial balance:", account.get_balance())  # Output: Initial balance: 1000
-account.deposit(500)
-print("Balance after deposit:", account.get_balance())  # Output: Balance after deposit: 1500
-account.withdraw(800)
-print("Balance after withdrawal:", account.get_balance())  # Output: Balance after withdrawal: 700
