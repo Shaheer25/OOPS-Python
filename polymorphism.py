@@ -4,25 +4,18 @@ class Animal:
 
 class Dog(Animal):
     def speak(self):
-        return "Woof!"
+        return "woof"
 
 class Cat(Animal):
     def speak(self):
-        return "Meow!"
-
-class Cow(Animal):
-    def speak(self):
-        return "Moo!"
+        return "Meow"
 
 def animal_sound(animal):
     return animal.speak()
 
-# Creating instances of different classes
-dog = Dog()
-cat = Cat()
-cow = Cow()
+dog=Dog()
+cat=Cat()
 
-# Calling the common function with different objects
+
 print(animal_sound(dog))
 print(animal_sound(cat))
-print(animal_sound(cow))
